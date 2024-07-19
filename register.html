@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Multipage Eduaction Website using HTML CSS and Javascript</title>
+    <link rel="stylesheet" href="style.css">
+    <!--Iconscout cdn-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <!--Font style used cdn-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300&family=Roboto&display=swap" rel="stylesheet">
+
+    <script>
+        const SignUpValidation = (event) => {
+
+          var inp1 = document.getElementById("inp1");
+          var inp2 = document.getElementById("inp2");
+          var inp3 = document.getElementById("inp3");
+          var inp4 = document.getElementById("inp4");
+          var inp5 = document.getElementById("inp5");
+          var inp6 = document.getElementById("inp6");
+      
+          var inpSpan1 = document.getElementById("inpSpan1");
+          var inpSpan2 = document.getElementById("inpSpan2");
+          var inpSpan3 = document.getElementById("inpSpan3");
+          var inpSpan4 = document.getElementById("inpSpan4");
+          var inpSpan5 = document.getElementById("inpSpan5");
+          var inpSpan6 = document.getElementById("inpSpan6");
+      
+          var valid = true;
+      
+          if (inp1.value == "") {
+            inpSpan1.innerText = "Please enter a value";
+            valid = false;
+          } else {
+            inpSpan1.innerText = "";
+          }
+      
+          if (inp2.value == "") {
+            inpSpan2.innerText = "Please enter a value";
+            valid = false;
+          } else {
+            inpSpan2.innerText = "";
+          }
+      
+          if (inp3.value == "") {
+            inpSpan3.innerText = "Please enter a value";
+            valid = false;
+          } else {
+            inpSpan3.innerText = "";
+          }
+      
+          if (inp4.value == "") {
+            inpSpan4.innerText = "Please enter a value";
+            valid = false;
+          } else {
+            inpSpan4.innerText = "";
+          }
+      
+          if (inp5.value == "") {
+            inpSpan5.innerText = "Please enter a value";
+            valid = false;
+          } else {
+            inpSpan5.innerText = "";
+          }
+      
+          if (inp6.value == "") {
+            inpSpan6.innerText = "Please enter a value";
+            valid = false;
+          } else {
+            inpSpan6.innerText = "";
+          }
+      
+          if (!valid) {
+            event.preventDefault(); 
+            alert("Please fill in all required fields.");
+          }
+
+
+          else{
+
+            if(!/^[A-Za-z]+$/.test(inp1.value)) {
+            event.preventDefault();
+            inpSpan1.innerHTML = "Please Enter Valid Text";
+          }
+            if(!/^[A-Za-z]+$/.test(inp2.value)) {
+            event.preventDefault();
+            inpSpan2.innerHTML = "Please Enter Valid Text";
+            }
+            if(!/^[0-9]+$/.test(inp3.value)) {
+            event.preventDefault();
+            inpSpan3.innerHTML = "Please Enter Valid Reg Number";  
+            }
+            if(!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(inp4.value)) {
+            event.preventDefault();
+            inpSpan4.innerHTML = "Please Enter Valid Email";  
+            }
+
+            if(!/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/.test(inp5.value)) {
+         event.preventDefault();
+    inpSpan5.innerHTML = "Password should have at least 8 characters, including at least one uppercase letter, one lowercase letter, and one digit.";  
+}
+            else if(inp5.value!=inp6.value) {
+             event.preventDefault();
+             inpSpan6.innerHTML = "Password does not matches";  
+              }
+
+        }
+          
+             
+        }
+
+
+      </script>
+
+      
+</head>
+
+<body>
+
+ <a href="index.html"><h4>Educator</h4></a>
+ <section class="form__section">
+    <div class="container form__section-container">
+        <h2>Register</h2>
+        
+        <form onsubmit="SignUpValidation(event)" action="index.html">
+            <input type="text" id="inp1" placeholder="First Name" > 
+            <span id="inpSpan1" style="color:red"></span>
+            <input type="text" id="inp2" placeholder="Last Name">
+            <span id="inpSpan2" style="color:red"></span>
+            <input type="text" id="inp3" placeholder="Registration No.">
+            <span id="inpSpan3" style="color:red"></span>
+            <input type="text" id="inp4" placeholder="Email">
+            <span id="inpSpan4" style="color:red"></span>
+            <input type="text" id="inp5" placeholder="Create Password">
+            <span id="inpSpan5" style="color:red"></span>
+            <input type="text" id="inp6" placeholder="Confirm Password">
+            <span id="inpSpan6" style="color:red"></span>
+            <button type="submit" class="btn" style="background-color: orange;">Register</button>
+        </form>
+    </div>
+</section>
+</body>
+</html>
